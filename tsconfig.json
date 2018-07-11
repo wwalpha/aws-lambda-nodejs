@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "rootDirs": [
+      "./src",
+      "./typings"
+    ],
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "lib": [
+      "es5",
+      "es6",
+      "es2015.promise",
+      "dom"
+    ],
+    "baseUrl": ".",
+    "removeComments": true,
+    "allowJs": true,
+    "strictNullChecks": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false
+  },
+  "compileOnSave": true,
+  "include": [
+    "src/**/*",
+  ],
+  "files": [
+    "./typings/types.d.ts",
+    "./typings/external.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
