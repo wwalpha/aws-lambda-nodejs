@@ -19,16 +19,11 @@ module.exports = {
   externals: ['aws-sdk'],
   resolve: {
     extensions: [
-      '.ts', '.js'
+      '.ts'
     ],
   },
   plugins: [
     new Webpack.NoEmitOnErrorsPlugin(),
-    new Webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
     new Webpack.LoaderOptionsPlugin({
       // minimize: true,
       debug: false

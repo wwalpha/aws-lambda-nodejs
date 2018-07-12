@@ -5,13 +5,13 @@ Resources:
   GetPreSignedURL:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: dist
+      CodeUri: dist/
       Handler: index.handler
       Runtime: nodejs8.10
-      Policies: S3FullAccess
+      Policies: s3:ListBucket
       Events:
         GetResource:
-          Type: API
+          Type: Api
           Properties:
             Path: /test
             Method: Get
