@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: Create S3 Pre-Signed URL
+Resources:
+  GetPreSignedURL:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: index.handler
+      Runtime: nodejs8.10
+      Policies: s3:ListBucket
+      Events:
+        GetResource:
+          Type: Api
+          Properties:
+            Path: /test
+            Method: Get
+      Environment:
+        Variables:
+          BUCKET_NAME: 'xxx'
