@@ -8,13 +8,7 @@ Resources:
       CodeUri: dist/
       Handler: index.handler
       Runtime: nodejs8.10
-      Policies: s3:ListBucket
-      Events:
-        GetResource:
-          Type: Api
-          Properties:
-            Path: /test
-            Method: Get
+      Policies: AmazonS3ReadOnlyAccess
       Environment:
         Variables:
-          BUCKET_NAME: 'xxx'
+          BUCKET_NAME: 'iotmobile-userfiles-mobilehub-1497933623'

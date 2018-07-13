@@ -1,4 +1,4 @@
-import { Context, Callback, } from 'aws-lambda';
+import { Context, Callback } from 'aws-lambda';
 import { S3 } from 'aws-sdk';
 
 export const handler = (event: any, context: Context, callback: Callback) => {
