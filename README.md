@@ -3,6 +3,22 @@ Lambda Functionsを一括管理するため、何が必要かを考える
 
 Nodejsベースのプロトタイプを作って、これを使い、改善を図る
 
+## Features
+* [ ] Lambda Functionのローカルテスト
+  * API Gateway locally
+  * Event Simulate
+    * S3 
+    * Kinesis
+    * DynamoDB
+    * Cloudwatch Scheduled Event
+    * Cloudtrail
+* [ ] Lambda Functionの自動リリース
+  * ローカルからS3経由で、AWS Lambdaにデポロィする
+* [X] 大規模開発ための`TypeScript`採用
+* [X] ライブラリの共通管理
+  * Lambda Functionごとライブラリインストールしない
+* [X] 経費削減ための実行モジュールの最小化(minimal)
+
 ## Installation
 ### Prerequisites
 * [Docker](https://www.docker.com/)
@@ -33,7 +49,7 @@ SAM CLI will use the `DOCKER_HOST` environment variable to contact the docker da
 ```
 
 ## Test
-テスト対象のフォルダにて、下記コマンドを実行する
+**テスト対象のフォルダにて、下記コマンドを実行する**
 
 ### Run API Gateway locally
 ライブラリは共通管理するため、実行する前にコンパイルが必要です。
