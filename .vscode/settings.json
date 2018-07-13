@@ -1,3 +1,10 @@
 {
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "yaml.schemas": {
+    "http://xxxxx.xxxx/raw/master/sam.schema.json": [
+      "sam.yaml",
+      "sam.yml"
+    ]
+  },
+  "yaml.validate": false
 }
