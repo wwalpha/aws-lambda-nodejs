@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: Cognito Auto Signup
+Resources:
+  GetPreSignedURL:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: index.handler
+      Runtime: nodejs8.10
+      FunctionName:
+        !Join
+        - '-'
+        - - cognito
+          - !Ref EnvType
+          - auto
+          - signup
+      # Role: arn:aws:iam::xxxxxxx:role/Lambda-DynamoDB-Role
+      MemorySize: 128
+      Timeout: 3
+
+Parameters:
+  EnvType:
+    Type: String
+    AllowedValues:
+      - dev
+      - stage
+      - prod
+    Default: dev
+
+Conditions:
+  DevEnvironment:
+    !Equals
+    - !Ref EnvType
+    - dev
+  StageEnvironment:
+    !Equals
+    - !Ref EnvType
+    - stage
+  ProdEnvironment:
+    !Equals
+    - !Ref EnvType
+    - prod

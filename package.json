@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wwalpha/aws-lambda#readme",
   "devDependencies": {
+    "happypack": "^5.0.0",
     "ts-loader": "^4.4.2",
     "tslint": "^5.10.0",
     "tslint-config-airbnb": "^5.9.2",

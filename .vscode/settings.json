@@ -1,5 +1,16 @@
 {
+  "tslint.autoFixOnSave": true,
   "git.ignoreLimitWarning": true,
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.vscode": true,
+    "**/.gitignore": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
   "yaml.schemas": {
     "http://xxxxx.xxxx/raw/master/sam.schema.json": [
       "sam.yaml",

@@ -1,0 +1,6 @@
+cognito-auto-signup-dev:
+  env: dev
+  service: cognito
+  function: auto-signup
+  bucket: lambda-deployments
+  build: true
