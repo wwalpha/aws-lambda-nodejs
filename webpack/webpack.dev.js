@@ -1,10 +1,17 @@
 const Webpack = require('webpack');
 const HappyPack = require('happypack');
+const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   target: 'node',
+  entry: {
+    Cognito_AutoSignup: './src/cognito/auto-signup/app.ts',
+    S3_PresignedUrl: './src/s3/pre-signed-url/app.ts',
+  },
   output: {
+    path: path.resolve(__dirname, '../dist/dev'),
+    filename: '[name].js',
     libraryTarget: 'commonjs2',
   },
   module: {
@@ -34,20 +41,11 @@ module.exports = {
   },
   plugins: [
     new HappyPack({
-<<<<<<< HEAD:webpack.base.js
-      loaders: ['babel-loader', 'ts-loader'],
+      loaders: ['ts-loader', 'babel-loader'],
     }),
     new Webpack.NoEmitOnErrorsPlugin(),
     new Webpack.LoaderOptionsPlugin({
-      minimize: false,
-=======
-      loaders: ['ts-loader'],
-    }),
-    new Webpack.NoEmitOnErrorsPlugin(),
-    new Webpack.LoaderOptionsPlugin({
-      minimize: true,
->>>>>>> 78424ce884b79e0e3b7623c78782268df4e9f36a:src/webpack.base.js
-      debug: false
+      debug: true
     })
   ],
   bail: true,
