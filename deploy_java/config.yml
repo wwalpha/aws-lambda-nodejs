@@ -1,0 +1,6 @@
+cognito-auto-signup-dev:
+  env: dev
+  service: api
+  function: malt-regist
+  bucket: xxx-deployments
+  build: true

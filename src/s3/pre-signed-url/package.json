@@ -1,0 +1,13 @@
+{
+  "name": "pre-signed-url",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "webpack -w --config webpack.config.js",
+    "invoke": "sam local invoke -d 5858 <function logical id>",
+    "api": "sam local start-api -d 5858"
+  },
+  "author": "",
+  "license": "ISC"
+}

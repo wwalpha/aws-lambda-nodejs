@@ -1,10 +1,12 @@
 const baseConfig = require('../../webpack.base');
 const merge = require('webpack-merge');
+const path = require('path');
 
 const config = {
-  entry: './index.ts',
+  entry: path.resolve(__dirname, 'app.ts'),
   output: {
-    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'app.js',
   }
 }
 
