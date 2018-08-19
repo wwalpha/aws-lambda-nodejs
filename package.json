@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/wwalpha/aws-lambda#readme",
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/preset-typescript": "^7.0.0-beta.54",
+    "babel-loader": "^8.0.0-beta.4",
     "ts-loader": "^4.4.2",
     "tslint": "^5.10.0",
     "tslint-config-airbnb": "^5.9.2",
@@ -28,6 +31,7 @@
     "@types/aws-lambda": "^8.10.7",
     "@types/node": "^10.5.2",
     "aws-appsync": "^1.2.1",
-    "aws-sdk": "^2.272.1"
+    "aws-sdk": "^2.272.1",
+    "happypack": "^5.0.0"
   }
 }

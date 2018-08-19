@@ -1,5 +1,6 @@
 const path = require('path');
 const Webpack = require('webpack');
+const HappyPack = require('happypack');
 
 module.exports = {
   mode: 'production',
@@ -9,6 +10,16 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.ts$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-typescript']
+          }
+        }
+      },
       {
         test: /\.ts$/,
         exclude: /node_modules/,
@@ -23,9 +34,12 @@ module.exports = {
     ],
   },
   plugins: [
+    new HappyPack({
+      loaders: ['babel-loader', 'ts-loader'],
+    }),
     new Webpack.NoEmitOnErrorsPlugin(),
     new Webpack.LoaderOptionsPlugin({
-      // minimize: true,
+      minimize: false,
       debug: false
     })
   ],
